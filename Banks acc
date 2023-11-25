@@ -1,0 +1,106 @@
+#include<stdio.h>
+#include<conio.h>
+#include<iostream.h>
+#include<ctype.h>
+main()
+{clrscr();
+int l=0,f,k,ac,a=100,c=0,accno[20],i=0,j=0,op,dep,bal[20],w;
+while(1)
+{clrscr();
+cout<<"\n1.Create";
+cout<<"\n2.For display";
+cout<<"\n3.For deposit";
+cout<<"\n4.For withdraw";
+cout<<"\n5.Current balance";
+cout<<"\n6.Exit";
+cout<<"\nenter your choice:";
+cin>>c;
+if(c==1)
+{ while(1)
+{
+clrscr();
+cout<<"enter opening balance:";
+cin>>op;
+if(op>=500)
+   break;
+}
+accno[i]=a++;
+bal[i]=op;
+i++;
+}
+if(c==2)
+{
+for(j=0;j<i;j++)
+{
+cout<<"\nAcc number is"<<accno[j]<<endl;
+cout<<"\n balance is"<< bal[j];
+}
+getch();
+}
+if(c==3)
+{
+f=0;
+cout<<"\nenter your acc number";
+cin>>ac;
+for(k=0;k<i;k++)
+{
+if(accno[k]==ac)
+{
+cout<<"enter amt to deposit";
+cin>>dep;
+bal[k]=bal[k]+dep;
+f=1;
+break;
+}
+}
+if(f==0)
+{
+cout<<"\ninvalid acc number";
+getch();
+}
+}
+if(c==4)
+{f=0;
+cout<<"\nenter your acc number";
+cin>>ac;
+for(l=0;l<i;l++)
+{
+if(accno[l]==ac)
+{
+cout<<"\nenter amount to withdraw";
+cin>>w;
+if(bal[l]-w>=500)
+   bal[l]=bal[l]-w;
+else
+cout<<"avg balance should be 500";
+f=1;
+break;}
+}
+if(f==0)
+{cout<<"\ninvalid acc no.";}
+getch();
+}
+if(c==5)
+{f=0;
+cout<<"\nenter your acc number";
+cin>>ac;
+for(k=0;k<i;k++)
+{
+if(accno[k]==ac)
+{
+cout<<bal[k];
+f=1;
+getch();
+break;
+}
+}
+if(f==0)
+{
+cout<<"\ninvalid acc number";
+getch();
+}
+}
+if(c==6)
+break;
+}
+}
